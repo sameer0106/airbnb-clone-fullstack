@@ -1,0 +1,26 @@
+  <!-- partial(head) -->
+  <%- include('../partials/head') %>
+  </head>
+  <body>
+    <!-- partial(header) included -->
+    <%- include('../partials/navigation') %>
+    <main class="airbnb-main">
+      <h2>Favourite Houses</h2>
+      <ul class="home-list">
+        <% FavHomes.forEach(home => { %>
+        <li class="home-card">
+          <img src="<%= home.houseImage %>" alt="house image" width="100%" /> <br><br>
+          <h4><%= home.homename %></h4>
+          <p style="opacity: 0.5;"><%= home.location %></p>
+          <p style="float: left;">₹<%= home.rentprice %>/night</p>
+          <p style="float: right;"><%= home.rating %>⭐</p>
+          <br><br>
+        <form action="/delete-favourite/<%= home._id %>" method="POST">
+          <button type="submit" class="delFavBtn">delete fav home</button>
+        </form>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

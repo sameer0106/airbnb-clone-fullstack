@@ -1,0 +1,90 @@
+<header>
+  <nav>
+
+    <!-- LEFT LOGO -->
+    <a href="/" class="logo <%= activePage === 'index' ? 'active' : '' %>">
+      airbnb
+    </a>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- MENU -->
+    <ul id="nav-menu">
+
+      <% if(isLoggedIn){ %>
+        <% if(logedUser && logedUser.usertype === 'guest'){ %>
+
+      <li>
+        <a href="/home" class="<%= activePage === 'Home' ? 'active' : '' %>">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="/favourite-list" class="<%= activePage === 'favourite-list' ? 'active' : '' %>">
+          Favourite
+        </a>
+      </li>
+
+      <li>
+        <a href="/bookings" class="<%= activePage === 'bookings' ? 'active' : '' %>">
+          Booking
+        </a>
+      </li>
+
+      <% }else{ %>
+
+      <li>
+        <a href="/add-home" class="<%= activePage === 'add-home' ? 'active' : '' %>">
+          Add Home
+        </a>
+      </li>
+
+      <li>
+        <a href="/host-home-list" class="<%= activePage === 'host-home' ? 'active' : '' %>">
+          Host Home
+        </a>
+      </li>
+      <% } %>
+    <% } %>
+
+      <% if(!isLoggedIn){ %>
+
+      <li>
+        <a href="/signup" class="<%= activePage === 'signup' ? 'active' : '' %>">
+          Signup
+        </a>
+      </li>
+
+      <li>
+        <a href="/login" class="<%= activePage === 'login' ? 'active' : '' %>">
+          Login
+        </a>
+      </li>
+
+      <% } else { %>
+
+      <li>
+        <form action="/logout" method="POST">
+          <button type="submit" class="nav-link">
+            Logout
+          </button>
+        </form>
+      </li>
+
+      <% } %>
+
+    </ul>
+
+  </nav>
+</header>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", function () {
+  menu.classList.toggle("show");
+});
+</script>

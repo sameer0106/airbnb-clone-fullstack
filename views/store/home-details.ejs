@@ -1,0 +1,38 @@
+<!-- partial for head -->
+<%- include('../partials/head') %>   
+</head>
+<body>
+  <!-- partial(header) -->
+  <%- include('../partials/navigation') %>
+
+
+  <main class="details-main">
+    <div class="details-card">
+
+      <img src="<%= home.houseImage %>" alt="house image" />
+
+      <div class="details-content">
+        
+        <h2><%= home.homename %></h2>
+        
+        <p class="location"><%= home.location %></p>
+
+        <div class="price-rating">
+          <span class="price">₹<%= home.rentprice %> / night</span>
+          <span class="rating"><%= home.rating %> ⭐</span>
+        </div>
+
+        <p><%= home.description %></p>
+
+        <div class="btn-group">
+          <button class="bookBtn">Book Now</button>
+          <%- include('../partials/favourite') %>
+        </div>
+      </div>
+      <a href="/home" class="backBtn">
+        <span class="back-icon">⬅️</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

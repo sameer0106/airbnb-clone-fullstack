@@ -1,0 +1,76 @@
+.bookBtn {
+  background-color: #24a62b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookBtn:hover {
+  background-color: #5ae36a;
+  transform: translateY(-1px);
+}
+
+.detailBtn {
+  display: block;
+  width: 50%;
+  background-color: #38bbbe;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.detailBtn:hover {
+  background-color: #67b9e9;
+}
+
+.delFavBtn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  background-color: #be7b38;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.delFavBtn:hover {
+  background-color: #d6934c;
+}
+
+/* responsive for small screens */
+@media (max-width: 600px) {
+  .delFavBtn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+.addToFav {
+  background: #baa92a;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,0 +1,46 @@
+<!-- making this page common for two diffrent UI's(add-home, edit-home) on case specifically changes by using ejs syntaxes <%= %> -->
+
+    <!-- partial(addHome) -->
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/add-home.css">
+  </head>
+  <body>
+    <!-- partial(header) included -->
+    <%- include('../partials/navigation') %>
+    <br>
+    <main class="add-home-page">
+    <div class="addhomeHeader">
+      <h2><%= editing ? "edit" : "Add" %> your home</h2>
+    </div>
+    <main>
+      <form action="/<%= editing ? "edit-home" : "add-home" %>" method="POST" enctype="multipart/form-data" >
+        <input 
+          type="hidden"
+          name="id"
+          value="<%= editing && home ? home._id : '' %>"
+        >
+        <input type="text" name="homename" value="<%= editing && home ? home.homename : '' %>" placeholder="enter home name" />
+        <input type="text" name="rentprice" value="<%= editing && home ? home.rentprice : '' %>" placeholder="price for one night" />
+        <input type="number" name="rating" min="1" max="5" step="0.1" value="<%= editing && home ? home.rating : '' %>" placeholder="rate us" required />
+        <input type="text" name="location" value="<%= editing && home ? home.location : '' %>" placeholder="location"  />
+        <p class="imgTitle"><%= editing ? "update your home upload" : "post your house image" %></p>
+
+        <!-- 👇 THIS sends the URL -->
+        <input 
+          type="file"
+          name="houseImage"
+          accept="image/jpg, image/jpeg, image/png"
+          value="<%= editing && home ? home.houseImage : '' %>"
+          >
+          <textarea 
+          type="text"
+          name="description"
+          placeholder="describe home"
+          ><%= editing && home ? home.description : '' %></textarea>
+
+        <input type="submit" value="<%= editing ? "update" : "submit" %>" />
+      </form>
+    </main>
+    </main>
+  </body>
+</html>

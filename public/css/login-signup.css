@@ -1,0 +1,107 @@
+.login-page .loginHeader {
+  width: 400px;
+  margin: auto;
+  margin-bottom: 7px;
+  color: #ff385c;
+  background: white;
+  padding: 10px 40px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-page{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* form container */
+.login-page .login-form {
+  background: white;
+  padding: 35px 40px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* all input fields */
+.login-page input[type="text"],
+.login-page input[type="email"],
+.login-page input[type="password"],
+.login-page input[type="tel"],
+.login-page input[type="date"],
+.login-page select,
+.login-page textarea{
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* textarea styling */
+.login-page textarea{
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* focus effect */
+.login-page input:focus,
+.login-page select:focus,
+.login-page textarea:focus{
+  border-color: #ff385c;
+  box-shadow: 0 0 0 2px rgba(255,56,92,0.15);
+}
+
+/* submit button */
+.login-page input[type="submit"]{
+  background-color: #ff385c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-page input[type="submit"]:hover{
+  background-color: #e11d48;
+}
+
+.form-control{
+  margin-bottom:15px;
+  display:flex;
+  flex-direction:column;
+}
+
+.form-control label{
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+select{
+  padding:8px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.user-type{
+  display:flex;
+  gap:20px;
+}
+
+.field-error{
+  color:#ff385c;
+  font-size:13px;
+  margin-top: -8px;
+  margin-left: 5px;
+}

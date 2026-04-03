@@ -1,0 +1,18 @@
+.success-header {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c8a3a9, #ff7a7a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.success-header h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+

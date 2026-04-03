@@ -1,0 +1,54 @@
+
+.actionBtns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.actionBtns form {
+  margin: 0;   /* form ka default margin remove */
+}
+
+  .editBtn{
+    background-color: rgb(121, 184, 247);
+    color: black;
+    border-radius: 6px; 
+    padding: 6px 12px; 
+    border: 1px solid #3bbcbc;
+    font-size: small;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+
+  .deleteBtn{
+    background-color: rgb(247, 183, 144);
+    border-radius: 6px; 
+    padding: 6px 12px; 
+    border: 1px solid #e38a4a; 
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  /* ✨ Hover Effects */
+  .editBtn:hover{
+    background-color: #4ddede;
+    color: #003333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .deleteBtn:hover{
+    background-color: #ff9f5a;
+    color: #4a1c00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+  }
+
+  /* 🖱 Click effect */
+  .editBtn:active,
+  .deleteBtn:active{
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }

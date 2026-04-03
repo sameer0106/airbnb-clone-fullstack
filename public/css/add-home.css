@@ -1,0 +1,93 @@
+/* page wrapper */
+.add-home-page * {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.add-home-page {
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+/* header */
+.add-home-page .addhomeHeader {
+  width: 400px;
+  margin: auto;
+  margin-bottom: 7px;
+  background-color: #ffffff;
+  padding: 10px 40px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.add-home-page .addhomeHeader h2 {
+  color: #ff385c;
+  font-size: 28px;
+}
+
+/* main */
+.add-home-page main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form */
+.add-home-page form {
+  background-color: #ffffff;
+  padding: 35px 40px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* inputs */
+.add-home-page input[type="text"],
+.add-home-page input[type="number"],
+.add-home-page textarea {
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.add-home-page input:focus,
+.add-home-page textarea:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.15);
+}
+
+/* submit button */
+.add-home-page input[type="submit"] {
+  background-color: #ff385c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-home-page input[type="submit"]:hover {
+  background-color: #e11d48;
+  transform: translateY(-1px);
+}
+
+.add-home-page input::placeholder {
+  color: #999;
+}
+
+/* image title */
+.add-home-page .imgTitle {
+  color: #999;
+  font-size: 15px;
+}

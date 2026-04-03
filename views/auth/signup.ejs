@@ -1,0 +1,109 @@
+<!-- partial(addHome) -->
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/login-signup.css">
+</head>
+
+<body>
+
+<!-- partial(header) included -->
+<%- include('../partials/navigation') %>
+
+<br>
+
+<main class="login-page">
+
+  <div class="loginHeader">
+    <h2>Create Account</h2>
+  </div>
+
+  <!-- logic for showing error below the input field -->
+  <%
+  const getError = (field) => {
+    if (!error) return null;
+    const err = error.find(e => e.path === field);
+    return err ? err.msg : null;
+  };
+  %>
+
+  <form action="/signup" method="POST" class="login-form">
+
+    <!-- fullname -->
+    <input type="text" name="fullname" placeholder="Full Name"
+    value="<%= oldInput.fullname %>" required>
+
+    <% if(getError("fullname")){ %>
+      <p class="field-error"><%= getError("fullname") %></p>
+    <% } %>
+
+    <!-- username -->
+    <input type="text" name="username" placeholder="Username"
+    value="<%= oldInput.username %>" required>
+
+    <% if(getError("username")){ %>
+      <p class="field-error"><%= getError("username") %></p>
+    <% } %>
+
+    <!-- email -->
+    <input type="email" name="email" placeholder="Email Address"
+    value="<%= oldInput.email %>" required>
+
+    <% if(getError("email")){ %>
+      <p class="field-error"><%= getError("email") %></p>
+    <% } %>
+
+    <!-- gender -->
+  <select name="gender" required>
+    <option value="">Select Gender</option>
+    <option value="male" <%= oldInput.gender === "male" ? "selected" : "" %>>Male</option>
+    <option value="female" <%= oldInput.gender === "female" ? "selected" : "" %>>Female</option>
+    <option value="other" <%= oldInput.gender === "other" ? "selected" : "" %>>Other</option>
+  </select>
+
+  <% if(getError("gender")){ %>
+    <p class="field-error"><%= getError("gender") %></p>
+  <% } %>
+
+    <!-- password -->
+    <input type="password" name="password" placeholder="Password" required>
+
+    <% if(getError("password")){ %>
+      <p class="field-error"><%= getError("password") %></p>
+    <% } %>
+
+    <!-- confirm password -->
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+
+    <% if(getError("confirmPassword")){ %>
+      <p class="field-error"><%= getError("confirmPassword") %></p>
+    <% } %>
+
+    <!-- user type -->
+    <div class="form-control">
+      <label>User Type</label>
+
+      <div class="user-type">
+      <label>
+        <input type="radio" name="usertype" value="guest"
+        <%= oldInput.usertype === "guest" ? "checked" : "" %>>
+        Guest
+      </label>
+
+      <label>
+        <input type="radio" name="usertype" value="host"
+        <%= oldInput.usertype === "host" ? "checked" : "" %>>
+        Host
+      </label>
+    </div>
+
+  <% if(getError("usertype")){ %>
+    <p class="field-error"><%= getError("usertype") %></p>
+  <% } %>
+</div>
+
+<!-- submit button -->
+    <input type="submit" value="Signup">
+
+  </form>
+</main>
+</body>
+</html>

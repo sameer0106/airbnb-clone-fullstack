@@ -1,0 +1,25 @@
+  <!-- partial(head) -->
+  <%- include('../partials/head') %>
+  </head>
+  <body>
+    <!-- partial(header) included -->
+    <%- include('../partials/navigation') %>
+    <main class="airbnb-main">
+      <h2>Welcome to Home List</h2>
+      <ul class="home-list">
+        <% addedHome.forEach(home => { %>
+        <li class="home-card">
+          <img src="<%= home.houseImage %>" alt="house image" width="100%" /> <br><br>
+          <h4><%= home.homename %></h4>
+          <p style="opacity: 0.5;"><%= home.location %></p>
+          <p style="float: left;">₹<%= home.rentprice %>/night</p>
+          <p style="float: right;"><%= home.rating %>⭐</p>
+          <br><br>
+          
+          <a class="detailBtn" href="/home-details/<%= home._id %>" >Details</a>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

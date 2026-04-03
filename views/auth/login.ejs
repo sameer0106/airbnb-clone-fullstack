@@ -1,0 +1,37 @@
+    <!-- partial(addHome) -->
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/login-signup.css">
+  </head>
+  <body>
+    <!-- partial(header) included -->
+    <%- include('../partials/navigation') %>
+    <br>
+
+    <main class="login-page">
+      <div class="loginHeader">
+        <h2>Login</h2>
+      </div>
+
+      <!-- logic for showing error below the input field -->
+     <% const getError = (field) => {
+        const err = error?.find(e => e.path === field);
+        return err?.msg || (typeof error?.[0] === "string" ? error[0] : null);
+      };%>
+
+      <form action="/login" method="POST" class="login-form">
+        
+        <!-- email -->
+        <input type="email" name="email" value="<%= oldInput ? oldInput.email : '' %>" placeholder="enter your email" />
+        
+        <!-- password -->
+        <input type="password" name="password" placeholder="password" />
+        
+        <% if(getError("email")){ %>
+        <p class="field-error"><%= getError("email") %></p>
+        <% } %>
+        
+        <input type="submit" value="Login"/>
+      </form>
+    </main>
+  </body>
+</html>
